@@ -4,12 +4,13 @@ function App() {
   return  (<div>
     <h3>hello</h3>
     <h2>'hello how are you'</h2>
-    <Folder />
+    <Folder food="cake" drink="coffee" />
   </div>);
 
 }
 
-const Folder = () => {
+const Folder = (props) => {
+  console.log(props)
   const name = 'my_desktop'
   return <h4> {name} </h4>
 
