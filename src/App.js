@@ -13,7 +13,8 @@ function App() {
 }
 const Folder = (props) => {
   console.log(props)
-  return (<div>
+  const borderStyle = {border :'2px solid blue'}
+  return (<div style= {borderStyle}>
      {props.name} 
      {props.children} 
   </div>
@@ -24,7 +25,7 @@ const Folder = (props) => {
 const File = (props) => {
   return (<div>
    {props.name} 
-  </div>
+  </div> 
   )
 
 }
