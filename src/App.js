@@ -6,7 +6,7 @@ function App() {
     <h2>'hello how are you'</h2>
     <Folder name="Desktop" >
        <h4> Some Stuff</h4>
-       <h4> Some Stuff</h4>
+       <h4> Some Stuff2</h4>
     </Folder>
     <Folder name="Applications" />
     <File name="Dogs.jpg" />
@@ -19,6 +19,7 @@ const Folder = (props) => {
   return (<div>
     
     <h4> {props.name} </h4>
+    <h4> {props.children} </h4>
   </div>
   )
 
