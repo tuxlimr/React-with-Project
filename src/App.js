@@ -2,7 +2,10 @@ import React from 'react';
 
 function App() {
   return (<div>
-    <Folder name="Desktop">
+    <Folder name="Desktop" isOpen={true}>
+      <Folder name="Music">
+        <File name="Arijit Singh.jpg" />
+      </Folder>
       <File name="Dogs.jpg" />
       <File name="Cats.jpg" />
     </Folder>
@@ -13,18 +16,18 @@ function App() {
 }
 const Folder = (props) => {
   console.log(props)
-  return (<div style= {{border :'2px solid blue'}}>
-     {props.name} 
-     {props.children} 
+  return (<div>
+    {props.name}
+    <div style={{ marginLeft: '17px' }}>
+      {props.isOpen ? props.children:null} </div>
   </div>
   )
-
 }
 
 const File = (props) => {
   return (<div>
-   {props.name} 
-  </div> 
+    {props.name}
+  </div>
   )
 }
 
