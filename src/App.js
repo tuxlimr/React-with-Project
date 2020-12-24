@@ -15,11 +15,12 @@ function App() {
 
 }
 const Folder = (props) => {
+  const {name, isOpen, children} = props;
   console.log(props)
   return (<div>
-    {props.name}
+    {name}
     <div style={{ marginLeft: '17px' }}>
-      {props.isOpen ? props.children:null} </div>
+      {isOpen ? children :  null} </div>
   </div>
   )
 }
