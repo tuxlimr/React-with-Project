@@ -4,7 +4,7 @@ function App() {
   return (<div>
     <Folder name="Desktop">
       <Folder name="Music">
-        <File name="Arijit Singh.jpg" />
+        <File name="Arijit Singh.mp3" />
       </Folder>
       <File name="Dogs.jpg" />
       <File name="Cats.jpg" />
@@ -17,13 +17,13 @@ const Folder = (props) => {
   const [ isOpen, setIsOpen ] = useState(true);
   const {name, children} = props;
   const direction = isOpen ? 'down' : 'right';
-
+  
   const handClick = () => {
     setIsOpen(!isOpen);
   };
-
-
-
+  
+  
+  
   return (<div>
     <span onClick={handClick}>
       <i className="blue folder icon"></i>
@@ -40,8 +40,16 @@ const Folder = (props) => {
 }
 
 const File = (props) => {
+  const {name} = props;
+  const fileExtention = name.split('.')[1]
+  const fileIcons ={
+    mp3 : 'headphones',
+    jpg : 'file image',
+    png: 'file image outline',
+  }
   return (<div>
-    {props.name}
+    <i className={`${fileIcons[fileExtention]} icon`}></i>
+    {name}
   </div>
   )
 }
